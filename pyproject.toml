@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "orthologs2jbrowse"
+dynamic = ["version"]
+description = "Ortholog calls from OrthoFinder, odp, MCScanX, Ensembl Compara or gene symbols as JBrowse 2 synteny tracks"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.9"
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.optional-dependencies]
+kaks = ["biopython"]
+
+[project.scripts]
+orthologs2jbrowse = "orthologs2jbrowse:main"
+
+[tool.hatch.version]
+path = "src/orthologs2jbrowse/__init__.py"
